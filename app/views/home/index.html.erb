@@ -1,0 +1,6 @@
+<h1>Home#index</h1>
+
+<p>Find me in app/views/home_controller/index.html.erb</p>
+<% Dir.foreach("/home/jirka/live") do |file| %>
+	<%= link_to file, :controller => 'home', :action => 'download', :filename => file %><br/>
+<% end %>

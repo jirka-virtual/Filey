@@ -40,14 +40,21 @@
 
 <div id="links">
 	<% @albums.each do |album| %>
-	<h3><%= album.title  %></h3>
-	<% album.photos.each do |photo| %>
+		<h3><%= album.title  %></h3>
+		<% album.photos.each do |photo| %>
+		    <a href="<%= photo.doc.url %>" title="Banana" data-gallery>
+		        <%= image_tag photo.doc.url(:medium) %>
+		    </a>
+		<% end %>
+		<hr/>
+
+	<% end %>
+	Unsorted
+	<% @photos.each do |photo| %>
 	    <a href="<%= photo.doc.url %>" title="Banana" data-gallery>
 	        <%= image_tag photo.doc.url(:medium) %>
 	    </a>
 	<% end %>
-	<hr/>
-<% end %>
 </div>
 
 <hr/>

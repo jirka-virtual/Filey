@@ -1,7 +1,7 @@
 class PhotosController < ApplicationController
   def index
   	@albums = Album.all
-  	@photos = Photo.all
+  	@photos = Photo.where(album_id: nil)
   end
 
   def list

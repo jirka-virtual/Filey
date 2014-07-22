@@ -1,13 +1,13 @@
 class Album < ActiveRecord::Base
   require 'zip'
 
-  has_many :photos
+  has_many :photos, dependent: :destroy
 
   has_attached_file :doc
 
   do_not_validate_attachment_file_type :doc
 
-  #after_create :extract_photos
+  after_create :extract_photos
 
   def extract_photos
     Zip::File.open(self.doc.path) do |zip_file|
@@ -34,4 +34,6 @@ class Album < ActiveRecord::Base
       #puts entry.get_input_stream.read
     end
   end
+
+  handle_asynchronously :extract_photos
 end

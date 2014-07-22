@@ -13,6 +13,9 @@ gem "twitter-bootstrap-rails"
 
 gem "rubyzip"
 
+gem 'delayed_job_active_record'
+gem "daemons"
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 

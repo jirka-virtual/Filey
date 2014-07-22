@@ -22,3 +22,10 @@ namespace :deploy do
   after :publishing, 'deploy:restart'
   after :finishing, 'deploy:cleanup'
 end
+
+after 'deploy:publishing', 'deploy:restart'                                     
+namespace :deploy do                                                            
+  task :restart do                                                                                                               
+    invoke 'delayed_job:restart'                                                
+  end                                                                           
+end

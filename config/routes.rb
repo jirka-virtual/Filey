@@ -1,4 +1,13 @@
 Filey::Application.routes.draw do
+  
+  resources :albums
+
+  resources :photos do
+    collection do
+      get :list
+    end
+  end
+
   get "home/index"
   get "home/download"
   # The priority is based upon order of creation: first created -> highest priority.

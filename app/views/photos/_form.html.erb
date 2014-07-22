@@ -1,0 +1,32 @@
+<%= form_for @photo, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :tag, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :tag, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :album, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :album, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :doc, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.file_field :doc %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                photos_path, :class => 'btn' %>
+  </div>
+<% end %>

@@ -5,8 +5,13 @@ gem 'rails', '4.0.4'
 
 gem 'pg'
 
+gem "paperclip", "~> 4.1"
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
+gem "twitter-bootstrap-rails"
+
+gem "rubyzip"
 
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'

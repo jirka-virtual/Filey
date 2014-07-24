@@ -1,6 +1,8 @@
 class AlbumsController < ApplicationController
-  before_action :set_album, only: [:show, :edit, :update, :destroy]
 
+  before_action :set_album, only: [:show, :edit, :update, :destroy]
+  before_action :authentication_admin, except: [:new]
+  before_action :authenticate_user!, only: [:new]
   # GET /albums
   # GET /albums.json
   def index
@@ -71,4 +73,6 @@ class AlbumsController < ApplicationController
     def album_params
       params.require(:album).permit(:title, :date_from, :date_to, :doc)
     end
+
+    
 end

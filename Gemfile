@@ -5,6 +5,8 @@ gem 'rails', '4.0.4'
 
 gem 'pg'
 
+gem 'devise'
+
 gem "paperclip", "~> 4.1"
 
 # Use SCSS for stylesheets

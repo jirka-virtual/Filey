@@ -51,8 +51,13 @@
           <div class="container-fluid nav-collapse">
             <ul class="nav">
               <li><%= link_to "Galery", "/photos"  %></li>
-              <li><%= link_to "List", "/photos/list"  %></li>
-              <li><%= link_to "Albums", "/albums"  %></li>
+              <% if admin? %>
+                <li><%= link_to "List", "/photos/list"  %></li>
+                <li><%= link_to "Albums", "/albums"  %></li>
+              <% end %>
+            </ul>
+            <ul class="nav pull-right">
+              <li><%= link_to "Logout", destroy_user_session_path, method: :delete  if user_signed_in? %></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -69,9 +74,7 @@
       </div><!--/row-->
 
       <footer>
-      	<br/>
-      	<br/>
-        <p>&copy; 2014</p>
+      	
       </footer>
 
     </div> <!-- /container -->

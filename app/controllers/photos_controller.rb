@@ -1,4 +1,6 @@
 class PhotosController < ApplicationController
+	before_action :authenticate_user!, except: [:index]
+	before_action :authentication_admin, only: [:list]
   def index
   	@albums = Album.all
   	@photos = Photo.where(album_id: nil)

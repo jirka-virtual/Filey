@@ -60,4 +60,7 @@
 <hr/>
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_photo_path,
-            :class => 'btn btn-primary' %>
+            :class => 'btn btn-primary' if user_signed_in? %>
+<%= link_to "Upload Album",
+            new_album_path,
+            :class => 'btn btn-primary' if user_signed_in? %>

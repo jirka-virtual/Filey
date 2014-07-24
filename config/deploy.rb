@@ -1,9 +1,12 @@
 # config valid only for Capistrano 3.1
 lock '3.1.0'
 
+require 'delayed/recipes'
+
 set :application, 'sms'
 set :repo_url, 'git@github.com:jirka-virtual/filey.git'
 
+set :delayed_job_command, "bin/delayed_job"
 
 set :deploy_to, '/home/jirka/filey'
 

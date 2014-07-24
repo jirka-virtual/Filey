@@ -24,7 +24,7 @@
         <td><%= link_to photo.id, photo_path(photo) %></td>
         <td><%= photo.name %></td>
         <td><%= photo.tag %></td>
-        <td><%= photo.album.title %></td>
+        <td><%= photo.album.title unless photo.album.nil? %></td>
         <td><%= photo.doc_file_name %></td>
         <td><%= photo.doc_content_type %></td>
         <td><%= photo.doc_file_size %></td>
